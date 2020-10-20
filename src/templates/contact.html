@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content1 %}
+This is a contact page!
+{% endblock %}
+
+{% block content2 %}
+<h1>Hello</h1>
+{{ request.user }}
+<p>This is a contact page</p>
+
+<p>
+    {{ my_text }}, {{ my_email }}
+</p>
+
+<ul>
+{% for my_sub_item in my_list %}
+    {% if my_sub_item == 123 %}
+        <li>{{forloop.counter}} - {{my_sub_item|add:321}}</li>
+    {% else %}
+        <li>{{forloop.counter}} - {{my_sub_item}}</li>
+    {% endif %}
+
+{% endfor %}
+</ul>
+{% endblock %}
